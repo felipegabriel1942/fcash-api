@@ -7,5 +7,6 @@ import com.felipegabriel.fcashapi.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-
+	
+	public Usuario findByEmail(String email);
 }

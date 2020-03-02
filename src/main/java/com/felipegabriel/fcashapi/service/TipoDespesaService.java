@@ -2,7 +2,6 @@ package com.felipegabriel.fcashapi.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.felipegabriel.fcashapi.model.TipoDespesa;
@@ -38,7 +37,7 @@ private TipoDespesaRepository repository;
 		return repository.save(tipoDespesa);
 	}
 	
-	public List<TipoDespesa> buscarTipoDespesas(Integer pagina, Integer tamanho) {
-		return repository.findAll(PageRequest.of(pagina, tamanho)).getContent();
+	public List<TipoDespesa> buscarTipoDespesas() {
+		return repository.findAll();
 	}
 }

@@ -2,7 +2,6 @@ package com.felipegabriel.fcashapi.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.felipegabriel.fcashapi.model.TipoReceita;
@@ -38,7 +37,7 @@ private TipoReceitaRepository repository;
 		return repository.save(tipoReceita);
 	}
 	
-	public List<TipoReceita> buscarTipoReceitas(Integer pagina, Integer tamanho) {
-		return repository.findAll(PageRequest.of(pagina, tamanho)).getContent();
+	public List<TipoReceita> buscarTipoReceitas() {
+		return repository.findAll();
 	}
 }

@@ -37,17 +37,18 @@ public class DespesaResource {
 		
 	}
 	
-	@DeleteMapping("{pkdespesa}")
+	@DeleteMapping("{pkDespesa}")
 	public ResponseEntity<Void> deletarDespesa(@PathVariable Integer pkDespesa) {
 		try {
-			service.deletarDespesa(service.buscarDespesaPorId(pkDespesa));
+			Despesa despesa = service.buscarDespesaPorId(pkDespesa);
+			service.deletarDespesa(despesa);
 			return ResponseEntity.noContent().build();
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro ao excluír despesa.");
 		}
 	}
 	
-	@GetMapping("{pkdespesa}")
+	@GetMapping("{pkDespesa}")
 	public ResponseEntity<Despesa> buscarDespesaPorId(@PathVariable Integer pkDespesa) {
 		try {
 			return ResponseEntity.ok(service.buscarDespesaPorId(pkDespesa));

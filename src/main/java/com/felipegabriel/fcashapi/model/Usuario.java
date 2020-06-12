@@ -33,4 +33,8 @@ public class Usuario {
 	
 	@Column(name = "datanascimento")
 	private Date dataNascimento;
+	
+	private String imagem;
+	
+	private String nome;
 }

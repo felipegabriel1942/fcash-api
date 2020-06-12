@@ -20,7 +20,7 @@ import com.felipegabriel.fcashapi.service.TipoDespesaService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("tipo-tipoTipoDespesa")
+@RequestMapping("tipo-despesa")
 @RequiredArgsConstructor
 public class TipoDespesaResource {
 	
@@ -64,7 +64,7 @@ public class TipoDespesaResource {
 		}
 	}
 	
-	@GetMapping("tipoTipoDespesas")
+	@GetMapping
 	public ResponseEntity<List<TipoDespesa>> buscarTipoDespesas() {
 		try {
 			return ResponseEntity.ok(service.buscarTipoDespesas());

@@ -64,7 +64,7 @@ public class TipoReceitaResource {
 		}
 	}
 	
-	@GetMapping("tipoReceitas")
+	@GetMapping("todos")
 	public ResponseEntity<List<TipoReceita>> buscarTipoReceitas() {
 		try {
 			return ResponseEntity.ok(service.buscarTipoReceitas());

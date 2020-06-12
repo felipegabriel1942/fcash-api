@@ -38,7 +38,7 @@ private ReceitaRepository repository;
 		return repository.save(receita);
 	}
 	
-	public List<Receita> buscarReceitas(Integer pagina, Integer tamanho) {
-		return repository.findAll(PageRequest.of(pagina, tamanho)).getContent();
+	public List<Receita> buscarReceitas(Integer pagina, Integer tamanho, Integer fkUsuario) {
+		return repository.findByFkUsuario(fkUsuario, PageRequest.of(pagina, tamanho));
 	}
 }

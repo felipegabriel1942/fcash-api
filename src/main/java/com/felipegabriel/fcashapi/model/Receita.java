@@ -44,4 +44,13 @@ public class Receita {
 	@ManyToOne
 	@JoinColumn(name = "fkusuario")
 	private Usuario fkUsuario;
+	
+	private String imagem;
+	
+	private String observacao;
+	
+	private boolean recebido;
+	
+	@Column(name = "receitafixa")
+	private boolean receitaFixa;
 }

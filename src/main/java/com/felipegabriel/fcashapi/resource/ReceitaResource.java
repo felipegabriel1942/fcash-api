@@ -68,9 +68,10 @@ public class ReceitaResource {
 	@GetMapping("receitas")
 	public ResponseEntity<List<Receita>> buscarReceitas(
 			@RequestParam("pagina") Integer pagina,
-			@RequestParam("tamanho") Integer tamanho) {
+			@RequestParam("tamanho") Integer tamanho,
+			@RequestParam("fkUsuario") Integer fkUsuario) {
 		try {
-			return ResponseEntity.ok(service.buscarReceitas(pagina, tamanho));
+			return ResponseEntity.ok(service.buscarReceitas(pagina, tamanho, fkUsuario));
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro ao buscar receitas.");
 		}

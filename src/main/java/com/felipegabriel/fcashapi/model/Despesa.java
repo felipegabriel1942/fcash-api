@@ -44,4 +44,18 @@ public class Despesa {
 	@ManyToOne
 	@JoinColumn(name = "fkusuario")
 	private Usuario fkUsuario;
+	
+	private String imagem;
+	
+	@Column(name = "datavencimento")
+	private Date dataVencimento;
+	
+	private boolean boleto;
+	
+	private String observacao;
+	
+	private boolean pago;
+	
+	@Column(name = "despesafixa")
+	private boolean despesaFixa;
 }
